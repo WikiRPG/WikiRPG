@@ -1,0 +1,16 @@
+
+
+
+
+
+
+
+Page principale
+    Tool bare {
+        Items -> Armes etc
+        NPC -> achat
+        Quete -> Petite phrase d'accroche et liste des quetes 
+        MAP
+        BOSS
+    }
+
