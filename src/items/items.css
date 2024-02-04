@@ -1,0 +1,52 @@
+body {
+    background-color: #2a2d3d;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 15px;
+}
+
+.card {
+    background-color: #1c1f2e;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.id {
+    font-size: 0.8em;
+    color: #ccc;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.image {
+    background-image: url('../../assets/npc/skull.png');
+    height: 100px; /* Hauteur de l'image */
+    border-radius: 5px;
+    /* Ajouter des images de créatures avec des classes spécifiques ou des styles en ligne */
+}
+
+.attributes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.attribute {
+    font-size: 1.5em;
+}
