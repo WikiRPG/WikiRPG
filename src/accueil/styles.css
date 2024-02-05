@@ -1,3 +1,9 @@
+/*
+    Pour mettre les borders :
+    border: 2px solid #ff0000;
+    border-radius: 1%;
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=YourFontName&display=swap');
 
 body {
@@ -20,7 +26,7 @@ body {
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
@@ -31,4 +37,22 @@ body {
     color: black;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    font-size: 300px;
+    margin: 300px 40px;
+    color: white;
+    /*set shadow to the text*/
+    text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+    font-family: 'Cinzel', serif;
+}
+
+/*set css for new box*/
+.news-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
 }
