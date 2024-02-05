@@ -1,21 +1,51 @@
+/*
+    Pour mettre les borders :
+    border: 2px solid #ff0000;
+    border-radius: 1%;
+*/
+
+
 body {
     background-color: #2a2d3d;
     font-family: Arial, sans-serif;
 }
 
+.title_container {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+}
+
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 15px;
+    /*grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));*/
+    gap: 20px;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.cards_container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 50px;
+    justify-content: flex-start;
     padding: 15px;
 }
 
 .card {
     background-color: #1c1f2e;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 15px;
+    padding: 15px;
     color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .header {
@@ -36,9 +66,10 @@ body {
 
 .image {
     background-image: url('../../assets/npc/skull.png');
-    height: 100px; /* Hauteur de l'image */
-    border-radius: 5px;
-    /* Ajouter des images de créatures avec des classes spécifiques ou des styles en ligne */
+    background-size: cover;
+    background-position: center;
+    height: 120px;
+    border-radius: 10px;
 }
 
 .attributes {
@@ -48,5 +79,34 @@ body {
 }
 
 .attribute {
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+.attribute_data {
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+.attribute-icon {
     font-size: 1.5em;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ajuster la taille des colonnes pour s'adapter à l'écran plus petit */
+        padding-left: 15px; /* Réduire l'espacement sur les côtés */
+        padding-right: 15px;
+    }
+    
+    .cards_container {
+        flex-wrap: wrap;
+        overflow-x: hidden;
+        justify-content: center;
+    }
+    
+    .card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
 }
