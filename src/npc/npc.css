@@ -1,0 +1,126 @@
+/*
+    Pour mettre les borders :
+    border: 2px solid #ff0000;
+    border-radius: 1%;
+*/
+
+body {
+    background-image: url('../../assets/background/background_flou.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.navbar button:hover {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.npc_1 {
+    background-color: black;
+    color: white;
+    display: grid;
+    margin-top: 150px;
+    padding: 20px 45px;
+    max-width: 300px;
+    height: 580px;
+    gap: 20px;
+    position: relative;
+    left: 300px;
+    transform: translateX(-50%);
+}
+
+.npc_img_box {
+    position: relative;
+    height: 440px;
+    width: 130%;
+    max-width: 400px;
+    left: 50%;
+    top: 200px;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.npc_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s, width 0.5s, height 0.5s;
+}
+
+/*Voir pour apparition*/
+.npc_img_box:hover .npc_img {
+    transform: scale(1.1);
+    /*Faire afficher la box npc_description*/
+    z-index: 1;
+    position: relative;
+    top: -100px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    height: 100px;
+    width: 100%;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 2px solid #ff0000;
+    border-radius: 1%;
+    border: 2px solid #ff0000;
+    border-radius: 1%;
+}
+
+.npc_img_box:hover .npc_img:hover {
+    transform: scale(1.1);
+}
+
+.npc_img_box .npc_img {
+    transition: transform 0.5s;
+}
+
+.npc_text_box {
+    position: relative;
+    height: 180px;
+    width: 130%;
+    max-width: 400px;
+    left: 50%;
+    top: 46px;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.npc_name, .npc_description { 
+    text-align: center;
+}
