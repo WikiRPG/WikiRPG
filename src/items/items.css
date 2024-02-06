@@ -124,8 +124,8 @@ body {
 
 @media only screen and (max-width: 600px) {
     .container {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ajuster la taille des colonnes pour s'adapter à l'écran plus petit */
-        padding-left: 15px; /* Réduire l'espacement sur les côtés */
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        padding-left: 15px;
         padding-right: 15px;
     }
     
