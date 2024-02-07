@@ -1,0 +1,40 @@
+/*
+    Pour mettre les borders :
+    border: 2px solid #ff0000;
+    border-radius: 1%;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=YourFontName&display=swap');
+
+body {
+    background-image: url('../../assets/background/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.navbar button:hover {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
