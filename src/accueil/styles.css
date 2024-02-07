@@ -39,58 +39,44 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.lore_text {
-    display: flex;
-    justify-content: center;
-}
-
 h1 {
     text-align: center;
     font-size: 300px;
-    margin: 300px 40px;
+    margin: 400px 40px;
     color: white;
     /*set shadow to the text*/
-    text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
-    font-family: 'Cinzel', serif;
+    text-shadow: 4px 4px 2px rgb(0, 0, 0);
+    font-family: 'MedievalSharp', cursive;
 
-    border: 2px solid #ff0000;
-    border-radius: 1%;
 }
 
 h2 {
     text-align: center;
     font-size: 100px;
-    margin: 100px 40px;
+    margin: 40px;
     color: white;
     /*set shadow to the text*/
-    text-shadow: 4px 4px 2px rgb(0, 0, 0);
-    font-family: 'Cinzel', serif;
+    text-shadow: 4px 4px 2px rgb(2, 2, 2);
+    font-family: 'MedievalSharp', cursive;
 
-    border: 2px solid #26ff00;
-    border-radius: 1%;
 }
 
 h3 {
     text-align: justify;
     width: 60%;
-    font-size: 30px;
-    margin: 30px 40px;
+    font-size: 25px;
+    margin: 10px;
     color: white;
     /*set shadow to the text*/
-    text-shadow: 4px 4px 2px rgb(0, 0, 0);
-    font-family: 'Cinzel', serif;
-
-    border: 2px solid #ff0000;
-    border-radius: 1%;
-    background: transparent;
+    text-shadow: 4px 4px 2px rgb(2, 2, 2);
+    font-family: 'MedievalSharp', cursive;
 }
 
-.lore_image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -430px;
-    rotate: 90deg;
+.lore > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
 }
 
 /*set css for new box*/
