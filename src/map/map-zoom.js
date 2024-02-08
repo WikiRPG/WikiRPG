@@ -1,61 +1,59 @@
-// map-zoom.js
-const zoomInButton = document.getElementById('zoom-in');
-const zoomOutButton = document.getElementById('zoom-out');
-const mapContainer = document.querySelector('.map-container');
-const images = document.querySelectorAll('.map-image');
+var map = L.map('map', {
+    center: [500, 500],
+    zoom: 1,
+    minZoom: 1,
+    maxZoom: 20,
+    crs: L.CRS.Simple,
+    smoothWheelZoom: true, // Activer le zoom fluide avec la molette
+    dragging: true, // Activer le glissement de la carte
+    tap: false, // Désactiver le tap (clic) de la carte
+    touchZoom: false, // Désactiver le zoom tactile
+    doubleClickZoom: false, // Désactiver le zoom sur double-clic
+    boxZoom: false // Désactiver le zoom par zone
+});
 
-let scale = 1; // Échelle de départ
-let startX, startY, initX, initY;
-let dragging = false;
+// Supprimer les contrôles de zoom de Leaflet par défaut
+map.removeControl(map.zoomControl);
 
-const zoomIn = () => {
-    scale *= 1.1; // Augmenter l'échelle de 10%
-    updateMapSize();
-};
+// Supprimer l'attribution de Leaflet
+map.attributionControl.remove();
 
-const zoomOut = () => {
-    scale /= 1.1; // Diminuer l'échelle de 10%
-    updateMapSize();
-};
+//activate smooth zoom
+map.on('zoom', function(event) {
+    map.setZoom(Math.round(map.getZoom()));
+});
 
-const updateMapSize = () => {
-    // Mettre à jour la taille du conteneur
-    mapContainer.style.width = `${800 * scale}px`;
-    mapContainer.style.height = `${600 * scale}px`;
+// Dimensions de votre image
+var w = 1024; // Remplacez par la largeur réelle de votre image
+var h = 1024; // Remplacez par la hauteur réelle de votre image
 
-    // Mettre à jour la taille de chaque image
-    images.forEach(image => {
-        image.style.width = `50%`;
-        image.style.height = `50%`;
-    });
-};
+// Calcul des coins de votre image pour qu'elle s'adapte à la vue de la carte
+var southWest = map.unproject([0, h], map.getMaxZoom() - 1);
+var northEast = map.unproject([w, 0], map.getMaxZoom() - 1);
+var bounds = new L.LatLngBounds(southWest, northEast);
 
-const dragStart = (e) => {
-    dragging = true;
-    startX = e.clientX;
-    startY = e.clientY;
-    initX = mapContainer.offsetLeft;
-    initY = mapContainer.offsetTop;
-    mapContainer.style.cursor = 'grabbing';
-};
+// Ajout de l'image à la carte comme une couche de superposition
+L.imageOverlay('../../assets/map/map.png', bounds).addTo(map);
 
-const draggingMap = (e) => {
-    if (dragging) {
-        let moveX = e.clientX - startX;
-        let moveY = e.clientY - startY;
-        mapContainer.style.left = `${initX + moveX}px`;
-        mapContainer.style.top = `${initY + moveY}px`;
-    }
-};
+// Ajuster la vue pour contenir l'image entière
+map.fitBounds(bounds);
 
-const dragEnd = () => {
-    dragging = false;
-    mapContainer.style.cursor = 'grab';
-};
+// Activer le zoom à l'endroit de la souris
+map.on('zoomstart', function(event) {
+    map.dragging.disable(); // Désactiver le glissement pendant le zoom
+});
 
-zoomInButton.addEventListener('click', zoomIn);
-zoomOutButton.addEventListener('click', zoomOut);
+map.on('zoomend', function(event) {
+    map.dragging.enable(); // Réactiver le glissement après le zoom
+});
 
-mapContainer.addEventListener('mousedown', dragStart);
-window.addEventListener('mousemove', draggingMap);
-window.addEventListener('mouseup', dragEnd);
+map.on('mousewheel', function(event) {
+    var mouse = map.mouseEventToContainerPoint(event.originalEvent);
+    var delta = event.originalEvent.deltaY;
+    var zoom = map.getZoom();
+    var newZoom = delta > 0 ? zoom - 1 : zoom + 1;
+    var scale = Math.pow(2, newZoom - zoom);
+    var origin = map.unproject(mouse, zoom).subtract(map.unproject(mouse, newZoom));
+    var offset = map.getCenter().subtract(origin.multiplyBy(scale));
+    map.setView(offset, newZoom, { animate: false });
+});

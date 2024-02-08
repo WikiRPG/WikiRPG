@@ -39,35 +39,21 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.map-wrapper {
-    position: relative;
-    width: 800px; /* ou autre selon vos besoins */
-    height: 600px; /* ou autre selon vos besoins */
-    overflow: hidden; /* pour cacher les parties de la carte qui dépassent */
-    border: 2px solid #000; /* Ajoute une bordure noire pour le cadre */
-    margin: auto;
-    margin-top: 7%;
+#map-container {
+    position: fixed;
+    width: 1024px; /* Largeur du conteneur */
+    height: 800px; /* Hauteur du conteneur */
+    top: 20%;
+    left: 30%;
+    overflow: hidden; /* Masquer les parties de la carte qui dépassent du conteneur */
+    border: 2px solid #ccc; /* Bordure pour le style */
+    border-radius: 5px; /* Bord arrondi */
 }
 
-.map-container {
+#map {
     position: absolute;
-    width: 800px;
-    height: 600px;
-    margin: auto;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
-    cursor: grab;
+    width: 100%; /* Largeur de la carte */
+    height: 100%; /* Hauteur de la carte */
 }
-
-.map-image {
-    position: absolute;
-    width: 50%;
-    height: 50%;
-}
-
-#image1 { top: 0; left: 0; }
-#image2 { top: 0; right: 0; }
-#image3 { bottom: 0; left: 0; }
-#image4 { bottom: 0; right: 0; }
