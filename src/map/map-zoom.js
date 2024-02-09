@@ -2,7 +2,7 @@ var map = L.map('map', {
     center: [500, 500],
     zoom: 1,
     minZoom: 1,
-    maxZoom: 20,
+    maxZoom: 4,
     crs: L.CRS.Simple,
     smoothWheelZoom: true, // Activer le zoom fluide avec la molette
     dragging: true, // Activer le glissement de la carte

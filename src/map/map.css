@@ -43,8 +43,8 @@ body {
     position: fixed;
     width: 1024px; /* Largeur du conteneur */
     height: 800px; /* Hauteur du conteneur */
-    top: 20%;
-    left: 30%;
+    top: 15%;
+    left: 23%;
     overflow: hidden; /* Masquer les parties de la carte qui dépassent du conteneur */
     border: 2px solid #ccc; /* Bordure pour le style */
     border-radius: 5px; /* Bord arrondi */
