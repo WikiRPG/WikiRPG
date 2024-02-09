@@ -12,7 +12,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    font-family: Arial, sans-serif;
+    font-family: 'MedievalSharp', cursive;
 }
 
 .navbar {
@@ -41,41 +41,42 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.title_container {
-    display: flex;
-    flex-direction: column;
-    color: #ffffff;
-}
-
 .container {
     display: grid;
-    gap: 20px;
-    padding-left: 45px;
     padding-right: 45px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-left: 45px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    text-align: center;
+    text-decoration: underline;
+    flex-direction: column;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .cards_container {
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 50px;
     justify-content: flex-start;
-    padding: 15px;
+    overflow-x: scroll;
+    gap: 50px;
+    padding: 20px;
+    
 }
 
 .card {
-    background-color: #1c1f2e;
-    border-radius: 15px;
-    padding: 15px;
+    flex: 0 0 auto;
+    background-color: transparent;
+    backdrop-filter: blur(40px);
+    border-radius: 150px;
+    padding: 30px;
     color: white;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s ease-in-out;
-}
-
-.card:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.9s ease-in-out;
 }
 
 .header {
@@ -85,21 +86,30 @@ body {
     margin-bottom: 10px;
 }
 
-.id {
-    font-size: 0.8em;
-    color: #ccc;
+.name {
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+    margin: auto;
 }
 
-.name {
-    font-weight: bold;
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .image {
-    background-image: url('../../assets/npc/skull.png');
     background-size: cover;
     background-position: center;
-    height: 120px;
-    border-radius: 10px;
+    height: 200px;
+    border-radius: auto;
 }
 
 .attributes {
