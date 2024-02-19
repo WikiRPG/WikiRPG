@@ -41,7 +41,7 @@ body {
 
 #maCarte {
     height: 800px; /* ou la hauteur désirée */
-    width: 1000px; /* ou la largeur désirée */
+    width: 800px; /* ou la largeur désirée */
     position: absolute;
     top: 50%;
     left: 50%;
